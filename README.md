@@ -25,7 +25,9 @@ The image requires that the genesis block hash is passed as an environment varia
 path to the node secret configuration can be passed as an environment variable, if it shall start as a stake pool/leader candidate.
 
 ```
-docker run -v chain-data:/data -v conf:/conf -e GENESIS_BLOCK_HASH="9409af111b04896c756c1cee3b7f9bae8b9ed1843c9e0a5f07d92ab9b62f6f78" -e NODE_CONFIG_PATH="/conf/node-config.yaml" adalove/jormungandr:1.1-jormungandr0.8.3
+docker run -v chain-data:/data -v conf:/conf \
+-e GENESIS_BLOCK_HASH="9409af111b04896c756c1cee3b7f9bae8b9ed1843c9e0a5f07d92ab9b62f6f78" \ 
+-e NODE_CONFIG_PATH="/conf/node-config.yaml" adalove/jormungandr:1.1-jormungandr0.8.3
 ```
 
 **Environment Variables:**
