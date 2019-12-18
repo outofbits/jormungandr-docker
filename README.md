@@ -25,11 +25,12 @@ The image requires that the genesis block hash is passed as an environment varia
 path to the node secret configuration can be passed as an environment variable, if it shall start as a stake pool/leader candidate.
 
 **Environment Variables:**
-| First Header  | Required? |
-| ------------- | --------- |
-| GENESIS_BLOCK_HASH| Yes |
-| NODE_CONFIG_PATH  | Yes |
-| NODE_SECRET_PATH  | No |
+
+| ENVIRONMENT NAME  | Required? | Jormungandr Parameter Name |
+| ------------- | --------- | ------------------------------ |
+| GENESIS_BLOCK_HASH| Yes | --genesis-block-hash |
+| NODE_CONFIG_PATH  | Yes | --config |
+| NODE_SECRET_PATH  | No | --secret |
 
 ```
 docker run -v chain-data:/data -v conf:/conf adalove/jormungandr:1.1-jormungandr0.8.3
