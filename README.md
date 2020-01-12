@@ -24,16 +24,19 @@ make latest
 The image requires that the genesis block hash is passed as an environment variable as well as the path to the node configuration. Optionally, the
 path to the node secret configuration can be passed as an environment variable, if it shall start as a stake pool/leader candidate.
 
-**Environment Variables:**
-| First Header  | Required? |
-| ------------- | --------- |
-| GENESIS_BLOCK_HASH| Yes |
-| NODE_CONFIG_PATH  | Yes |
-| NODE_SECRET_PATH  | No |
+```
+docker run -v chain-data:/data -v conf:/conf \
+-e GENESIS_BLOCK_HASH="9409af111b04896c756c1cee3b7f9bae8b9ed1843c9e0a5f07d92ab9b62f6f78" \ 
+-e NODE_CONFIG_PATH="/conf/node-config.yaml" adalove/jormungandr:1.1-jormungandr0.8.3
+```
 
-```
-docker run -v chain-data:/data -v conf:/conf adalove/jormungandr:1.1-jormungandr0.8.3
-```
+**Environment Variables:**
+
+| ENVIRONMENT NAME  | Required? | Jormungandr Parameter Name |
+| ------------- | --------- | ------------------------------ |
+| GENESIS_BLOCK_HASH| Yes | --genesis-block-hash |
+| NODE_CONFIG_PATH  | Yes | --config |
+| NODE_SECRET_PATH  | No | --secret |
 
 ### Where to store the data?
 There are several ways to store data used by applications that run in Docker containers. We encourage users of our images to familiarize themselves with the options available, including: 
