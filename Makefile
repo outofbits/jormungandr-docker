@@ -1,6 +1,9 @@
 DFILE_VERSION=1.2
 
-latest: 0.8.5
+latest: 0.8.6
+
+0.8.6:
+	docker build --build-arg JOR_VERSION="0.8.6" -t "adalove/jormungandr:${DFILE_VERSION}-jormungandr0.8.6" .
 
 0.8.5:
 	docker build --build-arg JOR_VERSION="0.8.5" -t "adalove/jormungandr:${DFILE_VERSION}-jormungandr0.8.5" .
