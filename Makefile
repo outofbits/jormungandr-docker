@@ -42,9 +42,9 @@ compiler:
 compile:
 	rm -rf ./binaries
 	docker run -v "$(PWD)/binaries:/binaries" -e GIT_REPO="https://github.com/input-output-hk/jormungandr" -e GIT_BRANCH="master" -e REV_HASH=${HASH} adalove/jormungandr-compiler:latest
-	docker build -f Compile.Binaries.Dockerfile -t "adalove/jormungandr:${C_DFILE_VERSION}-jormungandr.${JOR_HASH_PREFIX}" .
+	docker build -f Compiled.Binaries.Dockerfile -t "adalove/jormungandr:${C_DFILE_VERSION}-jormungandr.${JOR_HASH_PREFIX}" .
 
 cartel:
 	rm -rf ./binaries
 	docker run -v "$(PWD)/binaries:/binaries" -e GIT_REPO="https://github.com/michaeljfazio/jormungandr" -e GIT_BRANCH="cartel-v0.8.9" adalove/jormungandr-compiler:latest
-	docker build -f Compile.Binaries.Dockerfile -t "adalove/jormungandr:${C_DFILE_VERSION}-jormungandr.cartel" .
+	docker build -f Compiled.Binaries.Dockerfile -t "adalove/jormungandr:${C_DFILE_VERSION}-jormungandr.cartel" .
