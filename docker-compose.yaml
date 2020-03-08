@@ -2,20 +2,17 @@ version: '3'
 
 services:
   jormungandr:
-    image: adalove/jormungandr:1.1-jormungandr0.8.3
+    image: adalove/jormungandr:1.2-jormungandr0.8.13
     restart: always
     environment:
+      - RUST_BACKTRACE=full
       - GENESIS_BLOCK_HASH=9409af111b04896c756c1cee3b7f9bae8b9ed1843c9e0a5f07d92ab9b62f6f78
       - NODE_CONFIG_PATH=/conf/node-config.yaml
-      - RUST_BACKTRACE=full
     ports:
       - "3000:3000"
       - "127.0.0.1:3101:3101"
     volumes:
       - stakepool-data:/data
-      - stakepool-configuration:/conf
+      - ./configuration:/conf
 volumes:
-  stakepool-data:
-    external: true
-  stakepool-configuration:
-    external: true
+  stakepool-data: {}
