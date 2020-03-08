@@ -30,8 +30,8 @@ RUN mv guardian /opt/jormungandr/bin/
 
 ARG JOR_VERSION
 
-ADD "https://github.com/input-output-hk/jormungandr/releases/download/v${JOR_VERSION}/jormungandr-v${JOR_VERSION}-x86_64-unknown-linux-musl.tar.gz" ./
-RUN tar zxf jormungandr-v${JOR_VERSION}-x86_64-unknown-linux-musl.tar.gz && rm -f jormungandr-v${JOR_VERSION}-x86_64-unknown-linux-musl.tar.gz
+ADD "https://github.com/input-output-hk/jormungandr/releases/download/v${JOR_VERSION}/jormungandr-v${JOR_VERSION}-x86_64-unknown-linux-gnu.tar.gz" ./
+RUN tar zxf jormungandr-v${JOR_VERSION}-x86_64-unknown-linux-gnu.tar.gz && rm -f jormungandr-v${JOR_VERSION}-x86_64-unknown-linux-gnu.tar.gz
 RUN chmod a+x jormungandr
 RUN chmod a+x jcli
 
