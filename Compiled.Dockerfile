@@ -3,7 +3,8 @@ FROM centos:8 AS builder
 
 RUN dnf install -y gcc git openssl-devel
 
-RUN curl https://sh.rustup.rs > sh.rustup.rs && sh sh.rustup.rs -y
+ADD https://sh.rustup.rs sh.rustup.rs
+RUN sh sh.rustup.rs -y
 
 ARG JOR_VERSION
 ARG JOR_REPOSITORY
